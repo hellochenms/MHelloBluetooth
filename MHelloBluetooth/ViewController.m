@@ -7,14 +7,17 @@
 //
 
 #import "ViewController.h"
-#import "Device.h"
-#import "BluetoothManager.h"
+#import "BluetoothDevice.h"
+#import "MHBBluetoothManager.h"
+#import "DeviceDetailViewController.h"
+#import "CurrentUser.h"
 
 static NSString * const cellIdentifier = @"cellIdentifier";
 
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *scanButton;
 @property (weak, nonatomic) IBOutlet UIButton *cancelScanButton;
+@property (weak, nonatomic) IBOutlet UIButton *retrieveButton;
 @property (nonatomic) NSMutableArray *devices;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
@@ -44,11 +47,21 @@ static NSString * const cellIdentifier = @"cellIdentifier";
     [self refreshUIBeforeLoadData];
     [self.devices removeAllObjects];
     [self.tableView reloadData];
-    [[BluetoothManager sharedInstance] scan];
+    [[MHBBluetoothManager sharedInstance] scan];
 }
 - (IBAction)onTapCancelScan:(id)sender {
-    [[BluetoothManager sharedInstance] cancelScan];
+    [[MHBBluetoothManager sharedInstance] cancelScan];
     [self refreshUIAfterLoadData];
+}
+
+- (IBAction)onTapRetrieve:(id)sender {
+    [self.devices removeAllObjects];
+    [self.tableView reloadData];
+    if ([CurrentUser sharedInstance].bluetoothDeviceUUIDString) {
+        BluetoothDevice *device = [[MHBBluetoothManager sharedInstance] deviceForUUIDString:[CurrentUser sharedInstance].bluetoothDeviceUUIDString];
+        [self.devices addObject:device];
+        [self.tableView reloadData];
+    }
 }
 
 #pragma mark - notifications
@@ -57,24 +70,25 @@ static NSString * const cellIdentifier = @"cellIdentifier";
                                              selector:@selector(onReceiveBMFindDeviceNotification:)
                                                  name:BMFindDeviceNotification
                                                object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(onReceiveBMScanFaildNotification)
-                                                 name:BMScanFaildNotification
-                                               object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(onReceiveBMScanFaildNotification)
+//                                                 name:BMScanFaildNotification
+//                                               object:nil];
 }
 - (void)removeNotifications {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 - (void)onReceiveBMFindDeviceNotification:(NSNotification *)notification {
-    Device *device = [notification.userInfo objectForKey:BMDeviceNotificationUserInfoKey];
+    BluetoothDevice *device = [notification.userInfo objectForKey:BMDeviceNotificationUserInfoKey];
     [self.devices addObject:device];
     [self.tableView reloadData];
     [self refreshUIAfterLoadData];
 }
-- (void)onReceiveBMScanFaildNotification {
-    NSLog(@"扫描失败");
-    [self refreshUIAfterLoadData];
-}
+//- (void)onReceiveBMScanFaildNotification {
+//    NSLog(@"扫描失败");
+//    [self refreshUIAfterLoadData];
+//}
+
 
 #pragma mark - refresh UI for load data
 - (void)refreshUIBeforeLoadData {
@@ -93,10 +107,15 @@ static NSString * const cellIdentifier = @"cellIdentifier";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    Device *device = [self.devices objectAtIndex:indexPath.row];
+    BluetoothDevice *device = [self.devices objectAtIndex:indexPath.row];
     cell.textLabel.text = device.name;
     
     return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    DeviceDetailViewController *controller = [DeviceDetailViewController new];
+    controller.device = [self.devices objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 #pragma mark - dealloc

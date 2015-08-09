@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06ACF37937A7B88BDF638964 /* libPods-MHelloBluetooth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BC29BA38849DF4B5D64BDD /* libPods-MHelloBluetooth.a */; };
 		1ABD432C1B75D41000147E12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABD432B1B75D41000147E12 /* main.m */; };
 		1ABD432F1B75D41000147E12 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABD432E1B75D41000147E12 /* AppDelegate.m */; };
 		1ABD43321B75D41000147E12 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABD43311B75D41000147E12 /* ViewController.m */; };
@@ -15,8 +16,14 @@
 		1ABD433A1B75D41000147E12 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABD43381B75D41000147E12 /* LaunchScreen.xib */; };
 		1ABD43461B75D41000147E12 /* MHelloBluetoothTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABD43451B75D41000147E12 /* MHelloBluetoothTests.m */; };
 		1ABD43571B75D5CC00147E12 /* UILogicConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABD43561B75D5CC00147E12 /* UILogicConstants.m */; };
-		1ABD435C1B75D7C900147E12 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABD435B1B75D7C900147E12 /* Device.m */; };
-		1ABD435F1B75D8CE00147E12 /* BluetoothManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABD435E1B75D8CE00147E12 /* BluetoothManager.m */; };
+		1ABD435F1B75D8CE00147E12 /* MHBBluetoothManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABD435E1B75D8CE00147E12 /* MHBBluetoothManager.m */; };
+		1ABD43611B76033B00147E12 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABD43601B76033B00147E12 /* CoreBluetooth.framework */; };
+		1ABD43651B76151200147E12 /* BluetoothDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABD43641B76151200147E12 /* BluetoothDevice.m */; };
+		1ABD43691B761B7C00147E12 /* DeviceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABD43671B761B7C00147E12 /* DeviceDetailViewController.m */; };
+		1ABD436A1B761B7C00147E12 /* DeviceDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABD43681B761B7C00147E12 /* DeviceDetailViewController.xib */; };
+		1ABD436D1B76563A00147E12 /* BluetoothConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABD436C1B76563A00147E12 /* BluetoothConstants.m */; };
+		1ABD43711B772B5400147E12 /* M7DebugLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABD43701B772B5400147E12 /* M7DebugLogFormatter.m */; };
+		1ABD437B1B778BF200147E12 /* CurrentUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABD437A1B778BF200147E12 /* CurrentUser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,10 +52,24 @@
 		1ABD43451B75D41000147E12 /* MHelloBluetoothTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHelloBluetoothTests.m; sourceTree = "<group>"; };
 		1ABD43551B75D5CC00147E12 /* UILogicConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILogicConstants.h; sourceTree = "<group>"; };
 		1ABD43561B75D5CC00147E12 /* UILogicConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILogicConstants.m; sourceTree = "<group>"; };
-		1ABD435A1B75D7C900147E12 /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
-		1ABD435B1B75D7C900147E12 /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
-		1ABD435D1B75D8CE00147E12 /* BluetoothManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothManager.h; sourceTree = "<group>"; };
-		1ABD435E1B75D8CE00147E12 /* BluetoothManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothManager.m; sourceTree = "<group>"; };
+		1ABD435D1B75D8CE00147E12 /* MHBBluetoothManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHBBluetoothManager.h; sourceTree = "<group>"; };
+		1ABD435E1B75D8CE00147E12 /* MHBBluetoothManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHBBluetoothManager.m; sourceTree = "<group>"; };
+		1ABD43601B76033B00147E12 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		1ABD43631B76151200147E12 /* BluetoothDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothDevice.h; sourceTree = "<group>"; };
+		1ABD43641B76151200147E12 /* BluetoothDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothDevice.m; sourceTree = "<group>"; };
+		1ABD43661B761B7C00147E12 /* DeviceDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceDetailViewController.h; sourceTree = "<group>"; };
+		1ABD43671B761B7C00147E12 /* DeviceDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceDetailViewController.m; sourceTree = "<group>"; };
+		1ABD43681B761B7C00147E12 /* DeviceDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceDetailViewController.xib; sourceTree = "<group>"; };
+		1ABD436B1B76563A00147E12 /* BluetoothConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothConstants.h; sourceTree = "<group>"; };
+		1ABD436C1B76563A00147E12 /* BluetoothConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothConstants.m; sourceTree = "<group>"; };
+		1ABD436F1B772B5400147E12 /* M7DebugLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M7DebugLogFormatter.h; sourceTree = "<group>"; };
+		1ABD43701B772B5400147E12 /* M7DebugLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M7DebugLogFormatter.m; sourceTree = "<group>"; };
+		1ABD43721B773C9700147E12 /* MHelloBluetoothPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHelloBluetoothPrefixHeader.pch; sourceTree = "<group>"; };
+		1ABD43791B778BF200147E12 /* CurrentUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentUser.h; sourceTree = "<group>"; };
+		1ABD437A1B778BF200147E12 /* CurrentUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentUser.m; sourceTree = "<group>"; };
+		30BC29BA38849DF4B5D64BDD /* libPods-MHelloBluetooth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MHelloBluetooth.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F5E570DB801420FD4A16292 /* Pods-MHelloBluetooth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHelloBluetooth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MHelloBluetooth/Pods-MHelloBluetooth.debug.xcconfig"; sourceTree = "<group>"; };
+		B2185CAB8E59173260FCA66A /* Pods-MHelloBluetooth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHelloBluetooth.release.xcconfig"; path = "Pods/Target Support Files/Pods-MHelloBluetooth/Pods-MHelloBluetooth.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ABD43611B76033B00147E12 /* CoreBluetooth.framework in Frameworks */,
+				06ACF37937A7B88BDF638964 /* libPods-MHelloBluetooth.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +98,8 @@
 				1ABD43281B75D41000147E12 /* MHelloBluetooth */,
 				1ABD43421B75D41000147E12 /* MHelloBluetoothTests */,
 				1ABD43271B75D41000147E12 /* Products */,
+				5FC8A3696882D18A3B7D3EB2 /* Pods */,
+				63CA337E20E6B294C81F26F8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,9 +123,11 @@
 				1ABD43361B75D41000147E12 /* Images.xcassets */,
 				1ABD43381B75D41000147E12 /* LaunchScreen.xib */,
 				1ABD43521B75D49E00147E12 /* UILogic */,
-				1ABD43591B75D7BB00147E12 /* Model */,
+				1ABD43741B77874D00147E12 /* Model */,
+				1ABD436E1B772B3800147E12 /* Utils */,
 				1ABD434F1B75D43E00147E12 /* Bluetooth */,
 				1ABD43501B75D45B00147E12 /* Resources */,
+				1ABD43621B7603D400147E12 /* Framework */,
 				1ABD43291B75D41000147E12 /* Supporting Files */,
 			);
 			path = MHelloBluetooth;
@@ -111,6 +138,7 @@
 			children = (
 				1ABD432A1B75D41000147E12 /* Info.plist */,
 				1ABD432B1B75D41000147E12 /* main.m */,
+				1ABD43721B773C9700147E12 /* MHelloBluetoothPrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -135,8 +163,12 @@
 		1ABD434F1B75D43E00147E12 /* Bluetooth */ = {
 			isa = PBXGroup;
 			children = (
-				1ABD435D1B75D8CE00147E12 /* BluetoothManager.h */,
-				1ABD435E1B75D8CE00147E12 /* BluetoothManager.m */,
+				1ABD436B1B76563A00147E12 /* BluetoothConstants.h */,
+				1ABD436C1B76563A00147E12 /* BluetoothConstants.m */,
+				1ABD435D1B75D8CE00147E12 /* MHBBluetoothManager.h */,
+				1ABD435E1B75D8CE00147E12 /* MHBBluetoothManager.m */,
+				1ABD43631B76151200147E12 /* BluetoothDevice.h */,
+				1ABD43641B76151200147E12 /* BluetoothDevice.m */,
 			);
 			name = Bluetooth;
 			path = Classes/Bluetooth;
@@ -187,18 +219,57 @@
 		1ABD43581B75D5EA00147E12 /* Bluetooth */ = {
 			isa = PBXGroup;
 			children = (
+				1ABD43661B761B7C00147E12 /* DeviceDetailViewController.h */,
+				1ABD43671B761B7C00147E12 /* DeviceDetailViewController.m */,
+				1ABD43681B761B7C00147E12 /* DeviceDetailViewController.xib */,
 			);
 			path = Bluetooth;
 			sourceTree = "<group>";
 		};
-		1ABD43591B75D7BB00147E12 /* Model */ = {
+		1ABD43621B7603D400147E12 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				1ABD435A1B75D7C900147E12 /* Device.h */,
-				1ABD435B1B75D7C900147E12 /* Device.m */,
+				1ABD43601B76033B00147E12 /* CoreBluetooth.framework */,
+			);
+			name = Framework;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		1ABD436E1B772B3800147E12 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1ABD436F1B772B5400147E12 /* M7DebugLogFormatter.h */,
+				1ABD43701B772B5400147E12 /* M7DebugLogFormatter.m */,
+			);
+			name = Utils;
+			path = Classes/Utils;
+			sourceTree = "<group>";
+		};
+		1ABD43741B77874D00147E12 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1ABD43791B778BF200147E12 /* CurrentUser.h */,
+				1ABD437A1B778BF200147E12 /* CurrentUser.m */,
 			);
 			name = Model;
 			path = Classes/Model;
+			sourceTree = "<group>";
+		};
+		5FC8A3696882D18A3B7D3EB2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8F5E570DB801420FD4A16292 /* Pods-MHelloBluetooth.debug.xcconfig */,
+				B2185CAB8E59173260FCA66A /* Pods-MHelloBluetooth.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		63CA337E20E6B294C81F26F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				30BC29BA38849DF4B5D64BDD /* libPods-MHelloBluetooth.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,9 +279,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1ABD43491B75D41000147E12 /* Build configuration list for PBXNativeTarget "MHelloBluetooth" */;
 			buildPhases = (
+				A147AC8DB52D13D0B02EA19C /* Check Pods Manifest.lock */,
 				1ABD43221B75D41000147E12 /* Sources */,
 				1ABD43231B75D41000147E12 /* Frameworks */,
 				1ABD43241B75D41000147E12 /* Resources */,
+				728BFCAED46FCC6EBED398A7 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -282,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1ABD43351B75D41000147E12 /* Main.storyboard in Resources */,
+				1ABD436A1B761B7C00147E12 /* DeviceDetailViewController.xib in Resources */,
 				1ABD433A1B75D41000147E12 /* LaunchScreen.xib in Resources */,
 				1ABD43371B75D41000147E12 /* Images.xcassets in Resources */,
 			);
@@ -296,17 +370,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		728BFCAED46FCC6EBED398A7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MHelloBluetooth/Pods-MHelloBluetooth-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A147AC8DB52D13D0B02EA19C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1ABD43221B75D41000147E12 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ABD437B1B778BF200147E12 /* CurrentUser.m in Sources */,
 				1ABD43321B75D41000147E12 /* ViewController.m in Sources */,
+				1ABD43691B761B7C00147E12 /* DeviceDetailViewController.m in Sources */,
 				1ABD432F1B75D41000147E12 /* AppDelegate.m in Sources */,
 				1ABD43571B75D5CC00147E12 /* UILogicConstants.m in Sources */,
-				1ABD435C1B75D7C900147E12 /* Device.m in Sources */,
-				1ABD435F1B75D8CE00147E12 /* BluetoothManager.m in Sources */,
+				1ABD43711B772B5400147E12 /* M7DebugLogFormatter.m in Sources */,
+				1ABD435F1B75D8CE00147E12 /* MHBBluetoothManager.m in Sources */,
+				1ABD43651B76151200147E12 /* BluetoothDevice.m in Sources */,
 				1ABD432C1B75D41000147E12 /* main.m in Sources */,
+				1ABD436D1B76563A00147E12 /* BluetoothConstants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +484,8 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -384,7 +497,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -416,13 +529,15 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -432,8 +547,10 @@
 		};
 		1ABD434A1B75D41000147E12 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F5E570DB801420FD4A16292 /* Pods-MHelloBluetooth.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = MHelloBluetooth/MHelloBluetoothPrefixHeader.pch;
 				INFOPLIST_FILE = MHelloBluetooth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -442,8 +559,10 @@
 		};
 		1ABD434B1B75D41000147E12 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2185CAB8E59173260FCA66A /* Pods-MHelloBluetooth.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = MHelloBluetooth/MHelloBluetoothPrefixHeader.pch;
 				INFOPLIST_FILE = MHelloBluetooth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -503,6 +622,7 @@
 				1ABD434B1B75D41000147E12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1ABD434C1B75D41000147E12 /* Build configuration list for PBXNativeTarget "MHelloBluetoothTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +631,7 @@
 				1ABD434E1B75D41000147E12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

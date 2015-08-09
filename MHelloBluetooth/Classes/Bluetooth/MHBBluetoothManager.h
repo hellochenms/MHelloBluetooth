@@ -7,13 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BluetoothDevice.h"
 
 extern NSString * const BMFindDeviceNotification;
 extern NSString * const BMDeviceNotificationUserInfoKey;
-extern NSString * const BMScanFaildNotification;
+//extern NSString * const BMScanFaildNotification;
 
-@interface BluetoothManager : NSObject
+@interface MHBBluetoothManager : NSObject
 + (instancetype)sharedInstance;
 - (void)scan;
 - (void)cancelScan;
+- (BluetoothDevice *)deviceForUUIDString:(NSString *)uuidString;
 @end

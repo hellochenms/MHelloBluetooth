@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="VgI-lb-fhW">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -37,9 +38,21 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SBj-lF-L44">
-                                <rect key="frame" x="10" y="124" width="580" height="466"/>
+                                <rect key="frame" x="10" y="194" width="580" height="396"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQ4-Qt-8yt" userLabel="retrieve">
+                                <rect key="frame" x="60" y="134" width="480" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="WEk-uS-WBH"/>
+                                </constraints>
+                                <state key="normal" title="查找已绑定设备">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onTapRetrieve:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7O8-Nb-alx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -48,11 +61,15 @@
                             <constraint firstItem="mM2-fo-RTc" firstAttribute="width" secondItem="uON-ma-8Pp" secondAttribute="width" id="3lX-Do-PoQ"/>
                             <constraint firstAttribute="trailing" secondItem="SBj-lF-L44" secondAttribute="trailing" constant="10" id="4lD-dX-gLV"/>
                             <constraint firstItem="uON-ma-8Pp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="8my-hT-BGg"/>
+                            <constraint firstItem="SBj-lF-L44" firstAttribute="top" secondItem="HQ4-Qt-8yt" secondAttribute="bottom" constant="20" id="CmD-2W-dQC"/>
                             <constraint firstItem="uON-ma-8Pp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="100" id="KFv-eZ-P6B"/>
                             <constraint firstItem="SBj-lF-L44" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="RVA-jx-jkD"/>
+                            <constraint firstAttribute="trailing" secondItem="HQ4-Qt-8yt" secondAttribute="trailing" constant="60" id="bki-iU-n8t"/>
                             <constraint firstItem="mM2-fo-RTc" firstAttribute="centerY" secondItem="uON-ma-8Pp" secondAttribute="centerY" id="d32-TS-uDZ"/>
                             <constraint firstAttribute="trailing" secondItem="uON-ma-8Pp" secondAttribute="trailing" constant="100" id="dNv-uZ-2XN"/>
                             <constraint firstItem="uON-ma-8Pp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="100" id="dWa-aD-vzS"/>
+                            <constraint firstItem="HQ4-Qt-8yt" firstAttribute="top" secondItem="uON-ma-8Pp" secondAttribute="bottom" constant="20" id="i1o-J3-pgW"/>
+                            <constraint firstItem="HQ4-Qt-8yt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="60" id="ijT-b2-TaP"/>
                             <constraint firstItem="uON-ma-8Pp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="lh2-Hq-yc8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uON-ma-8Pp" secondAttribute="trailing" constant="60" id="t4x-V8-4f3"/>
                             <constraint firstItem="uON-ma-8Pp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="60" id="wAg-jr-PSj"/>
@@ -67,12 +84,14 @@
                                 <exclude reference="dWa-aD-vzS"/>
                                 <exclude reference="t4x-V8-4f3"/>
                                 <exclude reference="wAg-jr-PSj"/>
+                                <exclude reference="1Gh-8B-7lc"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="gcf-Ba-84d"/>
                     <connections>
                         <outlet property="cancelScanButton" destination="mM2-fo-RTc" id="vyB-1b-pRy"/>
+                        <outlet property="retrieveButton" destination="HQ4-Qt-8yt" id="NRR-K7-5Ur"/>
                         <outlet property="scanButton" destination="uON-ma-8Pp" id="9cS-c6-Noz"/>
                         <outlet property="tableView" destination="SBj-lF-L44" id="Gc5-n0-EEH"/>
                     </connections>
